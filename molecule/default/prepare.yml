@@ -4,5 +4,12 @@
   become: yes
   gather_facts: no
 
+  pre_tasks:
+    - name: Update Debians' APT cache.
+      ansible.builtin.apt:
+        update_cache: true
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
   roles:
     - role: jonaspammer.bootstrap
