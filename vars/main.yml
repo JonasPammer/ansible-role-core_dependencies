@@ -1,0 +1,14 @@
+---
+# vars file of ansible-role jonaspammer.core_dependencies
+# (tl;dr: almost not overwrite-able variables)
+
+_core_dependencies_somevar:
+  Debian: ""
+  Debian_10: ""
+  RedHat: ""
+
+core_dependencies_somevar: "{{
+  _core_dependencies_somevar[ansible_distribution ~'_'~ ansible_distribution_major_version]|default(
+  _core_dependencies_somevar[ansible_distribution])|default(
+  _core_dependencies_somevar[ansible_os_family])|default(
+  _core_dependencies_somevar['default']) }}"
