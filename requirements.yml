@@ -1,3 +1,5 @@
 ---
+roles:
+  - name: jonaspammer.bootstrap
 collections:
   - name: community.docker
