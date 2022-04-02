@@ -18,11 +18,11 @@ _core_dependencies_packages:
     - shadow
     - subversion
     - xz
-  Amazon-2018:
+  Amazon_2018:
     - iproute
     - shadow-utils
     - xz
-  Amazon-2:
+  Amazon_2:
     - iproute
     - shadow-utils
     - xz
@@ -35,7 +35,7 @@ _core_dependencies_packages:
     - python3-apt
     - subversion
     - xz-utils
-  RedHat-7:
+  RedHat_7:
     - iproute
     - libselinux-python
     - libsemanage-python
@@ -60,6 +60,7 @@ _core_dependencies_packages:
 
 core_dependencies_packages: "{{
   _core_dependencies_packages[ansible_distribution ~'_'~ ansible_distribution_major_version]|default(
+  _core_dependencies_packages[ansible_os_family ~'_'~ ansible_distribution_major_version]|default(
   _core_dependencies_packages[ansible_distribution])|default(
   _core_dependencies_packages[ansible_os_family])|default(
   _core_dependencies_packages['default']) }}"
