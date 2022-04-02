@@ -1,2 +1,5 @@
 ---
 # handlers file of ansible-role jonaspammer.core_dependencies
+
+- name: gather facts
+  ansible.builtin.setup:

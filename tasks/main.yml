@@ -1,7 +1,29 @@
 ---
 # tasks file of ansible-role jonaspammer.core_dependencies
 
-- name: check if all variables have been set correctly
-  ansible.builtin.import_tasks: assert.yml
-  run_once: true
-  delegate_to: localhost
+# - name: check if all variables have been set correctly
+#   ansible.builtin.import_tasks: assert.yml
+#   run_once: true
+#   delegate_to: localhost
+
+- name: install packages
+  ansible.builtin.package:
+    name: "{{ core_dependencies }}"
+    state: present
+    update_cache: true
+  notify:
+    - gather facts
+
+- name: reset connetion
+  ansible.builtin.meta: reset_connection
+
+- name: try to install pip packages
+  ansible.builtin.pip:
+    name: "{{ core_dependencies_pip_packages }}"
+    state: present
+  failed_when: false
+  notify:
+    - gather facts
+
+- name: flush handlers
+  ansible.builtin.meta: flush_handlers
