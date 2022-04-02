@@ -42,7 +42,7 @@ _core_dependencies_packages:
     - shadow-utils
     - xz
     - yum
-  RedHat:
+  RedHat: &redhat_packages
     - dnf
     - iproute
     - python3-dnf
@@ -50,6 +50,7 @@ _core_dependencies_packages:
     - python3-libsemanage
     - shadow-utils
     - xz
+  Rocky: *redhat_packages
   Suse:
     - iproute2
     - libselinux1
