@@ -2,14 +2,7 @@
 - name: prepare
   hosts: all
   become: true
-  #  gather_facts: false
-
-  pre_tasks:
-    - name: Update Debians' APT cache.
-      ansible.builtin.apt:
-        update_cache: true
-      when: ansible_os_family == 'Debian'
-      changed_when: false
+  gather_facts: false
 
   roles:
     - role: jonaspammer.bootstrap
