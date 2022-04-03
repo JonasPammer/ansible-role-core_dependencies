@@ -41,13 +41,8 @@ https://galaxy.ansible.com/community/general[`community.general`]).
 
 This role also ensures an up-to-date package cache for most systems.
 
-[NOTE]
-====
-Do not confuse this role with the `bootstrap` role,
-which is used to make a host meet the bare-minimum requirements
-for ansible python modules execution (`sudo` and `python`)
-by only issuing commands over Ansible's `raw` module.
-====
+In most cases, you will want to use this role in combination with my
+https://github.com/JonasPammer/ansible-role-bootstrap[`bootstrap`-role].
 
 
 toc::[]
