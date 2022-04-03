@@ -2,7 +2,7 @@
 # vars file of ansible-role jonaspammer.core_dependencies
 # (tl;dr: almost not overwrite-able variables)
 
-core_dependencies_shared_packages:
+core_dependencies__shared_packages:
   - acl
   - at
   - bzip2
@@ -12,7 +12,7 @@ core_dependencies_shared_packages:
   - tar
   - unzip
 
-_core_dependencies_packages:
+_core_dependencies__specific_packages:
   Alpine:
     - iproute2
     - shadow
@@ -59,16 +59,16 @@ _core_dependencies_packages:
     - subversion
     - xz
 
-core_dependencies_packages: "{{
-  _core_dependencies_packages[ansible_distribution ~'_'~ ansible_distribution_major_version]|default(
-  _core_dependencies_packages[ansible_os_family ~'_'~ ansible_distribution_major_version])|default(
-  _core_dependencies_packages[ansible_distribution])|default(
-  _core_dependencies_packages[ansible_os_family])|default(
-  _core_dependencies_packages['default']) }}"
+core_dependencies__specific_packages: "{{
+  _core_dependencies__specific_packages[ansible_distribution ~'_'~ ansible_distribution_major_version]|default(
+  _core_dependencies__specific_packages[ansible_os_family ~'_'~ ansible_distribution_major_version])|default(
+  _core_dependencies__specific_packages[ansible_distribution])|default(
+  _core_dependencies__specific_packages[ansible_os_family])|default(
+  _core_dependencies__specific_packages['default']) }}"
 
-core_dependencies: "{{ core_dependencies_shared_packages + core_dependencies_packages }}"
+core_dependencies__packages: "{{ core_dependencies__shared_packages + core_dependencies__specific_packages }}"
 
-core_dependencies_pip_packages:
+core_dependencies__pip_packages:
   - boto
   - boto3
   - boto
