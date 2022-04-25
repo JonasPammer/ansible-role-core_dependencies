@@ -3,61 +3,65 @@
 # (tl;dr: almost not overwrite-able variables)
 
 core_dependencies__shared_packages:
-  - acl
+  - acl # ansible.posix.archive
   - at
-  - bzip2
-  - bash
-  - git
-  - gzip
-  - tar
-  - unzip
+  - bzip2 # ansible.builtin.archive
+  - bash # ansible.builtin.shell (a system without bash is not usable ;) )
+  - git # ansible.builtin.git
+  - gzip # ansible.builtin.archive
+  - tar # ansible.builtin.unarchive
+  - unzip # ansible.builtin.unarchive
 
+# `ip` binary used as per:
+# https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#package-requirements-for-fact-gathering
 _core_dependencies__specific_packages:
   Alpine:
-    - iproute2
-    - shadow
-    - subversion
-    - xz
+    - iproute2 # `ip` binary
+    - shadow # ansible.builtin.user
+    - subversion # ansible.builtin.subversion
+    - xz # ansible.builtin.archive
   Amazon_2018:
-    - iproute
-    - shadow-utils
-    - xz
+    - iproute # `ip` binary
+    - shadow-utils # ansible.builtin.user
+    - xz # ansible.builtin.archive
   Amazon_2:
-    - iproute
-    - shadow-utils
-    - xz
+    - iproute # `ip` binary
+    - shadow-utils # ansible.builtin.user
+    - xz # ansible.builtin.archive
   Debian:
-    - apt-transport-https
-    - debconf
-    - debconf-i18n
-    - iproute2
-    - passwd
-    - python3-apt
-    - subversion
-    - xz-utils
+    - apt-transport-https # ansible.builtin.apt_repository (not stated explicitly but obvious)
+    - debconf # ansible.builtin.debconf
+    # (was debconf-utils)
+    - debconf-i18n # ansible.builtin.debconf
+    - iproute2 # `ip` binary
+    - passwd # ansible.builtin.user
+    - python3-apt # ansible.builtin.apt
+    - subversion # ansible.builtin.subversion
+    # (deb parameter "Requires the xz-utils package to extract the control file of the deb package to install.")
+    - xz-utils # ansible.builtin.apt
   RedHat_7:
-    - iproute
-    - libselinux-python
-    - libsemanage-python
-    - shadow-utils
-    - xz
-    - yum
+    - iproute # `ip` binary
+    - libselinux-python # ansible.posix.seboolean
+    - libsemanage-python # ansible.posix.seboolean
+    - shadow-utils # ansible.builtin.user
+    - xz # ansible.builtin.archive
+    - yum # ansible.builtin.yum
   RedHat: &redhat_packages
-    - dnf
-    - iproute
-    - python3-dnf
-    - python3-libselinux
-    - python3-libsemanage
-    - shadow-utils
-    - xz
+    - dnf # ansible.builtin.dnf
+    - iproute # `ip` binary
+    - python3-dnf # ansible.builtin.dnf
+    - python3-libselinux # ansible.posix.seboolean
+    - python3-libsemanage # ansible.posix.seboolean
+    - shadow-utils # ansible.builtin.user
+    - xz # ansible.builtin.archive
   Rocky: *redhat_packages
   Suse:
-    - iproute2
-    - libselinux1
-    - python3-selinux
-    - shadow
-    - subversion
-    - xz
+    - iproute2 # `ip` binary
+    - libselinux1 # ansible.posix.seboolean
+    - python3-selinux # ansible.posix.seboolean
+    - shadow # ansible.builtin.user
+    - subversion # ansible.builtin.subversion
+    - xz # ansible.builtin.archive
 
 core_dependencies__specific_packages: "{{
   _core_dependencies__specific_packages[ansible_distribution ~'_'~ ansible_distribution_major_version]|default(
