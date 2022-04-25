@@ -90,7 +90,7 @@ must be installed on the Ansible controller.
 .Overview of related roles
 ****
 Most roles have a “soft dependency” described in their `requirements.yml` file.
-The following diagram is a compilation of the soft dependencies of this role 
+The following diagram is a compilation of the soft dependencies of this role
 as well as the recursive soft dependencies of their `requirements.yml`.
 
 image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_core_dependencies.svg[
@@ -104,7 +104,7 @@ requirements.yml dependency graph of jonaspammer.core_dependencies]
 
 [NOTE]
 ====
-The machine needs to be prepared. 
+The machine needs to be prepared.
 In CI, this is done using `molecule/default/prepare.yml`:
 
 .link:molecule/default/prepare.yml[]
