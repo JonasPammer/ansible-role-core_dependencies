@@ -87,13 +87,25 @@ must be installed on the Ansible controller.
 // or variables that are used from other roles.
 
 
+.Overview of related roles
+====
+Most roles have a “soft dependency” described in their `requirements.yml` file.
+The following diagram is a compilation of the soft dependencies of this role 
+as well as the recursive soft dependencies of their `requirements.yml`.
+
+image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_core_dependencies.svg[
+requirements.yml dependency graph of jonaspammer.core_dependencies]
+====
+
+
 [[example_playbooks]]
 == 📚 Example Playbook Usages
 // Including examples of how to use this role in a playbook for common scenarios is always nice for users.
 
 [NOTE]
 ====
-The machine needs to be prepared. In CI, this is done using `molecule/default/prepare.yml`:
+The machine needs to be prepared. 
+In CI, this is done using `molecule/default/prepare.yml`:
 
 .link:molecule/default/prepare.yml[]
 [source,yaml]
