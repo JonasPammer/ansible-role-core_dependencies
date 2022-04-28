@@ -3,7 +3,7 @@
 # (tl;dr: almost not overwrite-able variables)
 
 core_dependencies__shared_packages:
-  - acl # ansible.posix.archive
+  - acl # ansible.builtin.archive
   - at
   - bzip2 # ansible.builtin.archive
   - bash # ansible.builtin.shell (a system without bash is not usable ;) )
