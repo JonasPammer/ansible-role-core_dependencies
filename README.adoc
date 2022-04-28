@@ -89,6 +89,13 @@ must be installed on the Ansible controller.
 // Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.)
 // should be mentioned here as well.
 
+[[public_vars]]
+== 📜 Facts/Variables defined by this role
+
+Each variable listed in this section
+is dynamically defined when executing this role (and can only be overwritten using `ansible.builtin.set_facts`) _and_
+is meant to be used not just internally.
+
 
 [[dependencies]]
 == 👫 Dependencies
