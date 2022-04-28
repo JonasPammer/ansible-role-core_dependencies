@@ -36,14 +36,13 @@ An Ansible role for installing the necessary system packages
 required for the proper execution of Ansible's core modules
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html[`ansible.builtin`] /
 https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html[`ansible.posix`]).
-In detail this role installs the dependencies needed/recommended for:
+The list concludes:
 
 * `ansible.builtin.apt_repository`
 * `ansible.builtin.archive`
 * `ansible.builtin.debconf`
 * `ansible.builtin.dnf`
 * `ansible.builtin.git`
-* `ansible.builtin.shell`
 * `ansible.builtin.subversion`
 * `ansible.builtin.unarchive`
 * `ansible.builtin.user`
