@@ -16,7 +16,6 @@ endif::[]
 
 // Very Relevant Status Badges
 https://github.com/JonasPammer/ansible-role-core_dependencies/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-core_dependencies/actions/workflows/ci.yml/badge.svg[Testing CI]]
-https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-core_dependencies?ref=badge_shield[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-core_dependencies.svg?type=small[FOSSA Licenses Status]]
 
 // Badges about Conventions in this Project
 https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
@@ -171,5 +170,3 @@ Please report any accidental breaking changes of a minor version update.
 ----
 include::LICENSE[]
 ----
-
-https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-core_dependencies?ref=badge_large[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-core_dependencies.svg?type=large[FOSSA Licensing Information]]
