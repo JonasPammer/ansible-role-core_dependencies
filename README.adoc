@@ -33,10 +33,7 @@ endif::[]
 
 
 An Ansible role for installing the necessary system packages
-required for the proper execution of Ansible's core modules
-https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html[`ansible.builtin`] /
-https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html[`ansible.posix`]).
-The list concludes:
+required for the proper execution of various Ansible's core modules, namingly:
 
 * `ansible.builtin.apt_repository`
 * `ansible.builtin.archive`
