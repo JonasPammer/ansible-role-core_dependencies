@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/JonasPammer/cookiecutter-ansible-role.git",
-  "commit": "d403dcc5d9601c2b2df5a93bde36a1a280a0a937",
+  "commit": "b5c93c9d90b5f00daa5c8afdc8b682c47f84a291",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -13,6 +13,7 @@
       "allow_duplicates": "no",
       "ansible_user_needs_to_become": "True",
       "role_name": "core_dependencies",
+      "project_slug": "ansible-role-core_dependencies",
       "project_short_purpose": "installing dependecies to support the Ansible core modules. ",
       "_template": "https://github.com/JonasPammer/cookiecutter-ansible-role.git"
     }
