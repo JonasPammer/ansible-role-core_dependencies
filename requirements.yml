@@ -2,5 +2,4 @@
 roles:
   - name: jonaspammer.bootstrap
 collections:
-  - name: community.docker # only needed for molecule execution
   - name: community.general
