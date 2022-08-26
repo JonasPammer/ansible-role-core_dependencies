@@ -46,7 +46,7 @@ Below you can find information on…
 ---
 galaxy_info:
   role_name: "core_dependencies"
-  description: "An ansible role for installing dependecies to support the Ansible core modules. ."
+  description: "An ansible role for installing dependecies to support the Ansible core modules."
 
   author: "jonaspammer"
   license: MIT
