@@ -146,8 +146,8 @@ The following diagram is a compilation of the "soft dependencies" of this role a
       roles:
         - jonaspammer.bootstrap
         - role: jonaspammer.core_dependencies
-          become: "{{ bootstrap_become }}"
-          become_user: "{{ bootstrap_become_user }}"
+          become: "{{ bootstrap_become | default(omit) }}"
+          become_user: "{{ bootstrap_become_user | default(omit) }}"
 
 # 📝 Development
 
