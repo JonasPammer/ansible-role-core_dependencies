@@ -941,8 +941,8 @@ as well as the recursive tree of their soft dependencies.</p>
   <span class="na">roles</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">jonaspammer.bootstrap</span>
     <span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">jonaspammer.core_dependencies</span>
-      <span class="na">become</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{</span><span class="nv"> </span><span class="s">bootstrap_become</span><span class="nv"> </span><span class="s">}}"</span>
-      <span class="na">become_user</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{</span><span class="nv"> </span><span class="s">bootstrap_become_user</span><span class="nv"> </span><span class="s">}}"</span></code></pre>
+      <span class="na">become</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{</span><span class="nv"> </span><span class="s">bootstrap_become</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">default(omit)</span><span class="nv"> </span><span class="s">}}"</span>
+      <span class="na">become_user</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{{</span><span class="nv"> </span><span class="s">bootstrap_become_user</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">default(omit)</span><span class="nv"> </span><span class="s">}}"</span></code></pre>
 </div>
 </div>
 </div>
@@ -1478,7 +1478,7 @@ SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-30 15:41:22 UTC
+Last updated 2022-08-30 15:59:16 UTC
 </div>
 </div>
 </body>
