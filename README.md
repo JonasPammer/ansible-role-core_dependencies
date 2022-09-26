@@ -44,6 +44,7 @@ Below you can find information on…
       description:
         "An ansible role for installing dependecies to support the Ansible core modules.
         Based on robertdebock's core_dependencies role."
+      standalone: true
 
       author: "jonaspammer"
       license: "MIT"
