@@ -125,7 +125,7 @@ The machine needs to be prepared. In CI, this is done in `molecule/resources/pre
       gather_facts: false
 
       roles:
-        - role: jonaspammer.bootstrap
+        - name: jonaspammer.bootstrap
 
 The following diagram is a compilation of the "soft dependencies" of this role as well as the recursive tree of their soft dependencies.
 
@@ -147,7 +147,7 @@ The following diagram is a compilation of the "soft dependencies" of this role a
 
       roles:
         - jonaspammer.bootstrap
-        - role: jonaspammer.core_dependencies
+        - name: jonaspammer.core_dependencies
           become: "{{ bootstrap_become | default(omit) }}"
           become_user: "{{ bootstrap_become_user | default(omit) }}"
 

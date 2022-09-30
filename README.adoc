@@ -162,7 +162,7 @@ which sources its soft dependencies from `requirements.yml`:
   gather_facts: false
 
   roles:
-    - role: jonaspammer.bootstrap
+    - name: jonaspammer.bootstrap
 ----
 
 The following diagram is a compilation of the "soft dependencies" of this role
@@ -198,7 +198,7 @@ requirements.yml dependency graph of jonaspammer.core_dependencies]
 
   roles:
     - jonaspammer.bootstrap
-    - role: jonaspammer.core_dependencies
+    - name: jonaspammer.core_dependencies
       become: "{{ bootstrap_become | default(omit) }}"
       become_user: "{{ bootstrap_become_user | default(omit) }}"
 -----
