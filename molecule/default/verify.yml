@@ -17,6 +17,7 @@
   tasks:
     - name: compress /tmp
       community.general.archive:
+        mode: u=rw,g=r,o=r
         path: /tmp
         dest: tmp.tgz
 
