@@ -5,4 +5,4 @@
   gather_facts: false
 
   roles:
-    - name: jonaspammer.bootstrap
+    - role: jonaspammer.bootstrap
