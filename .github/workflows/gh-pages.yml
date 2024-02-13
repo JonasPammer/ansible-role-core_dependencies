@@ -3,8 +3,6 @@ name: build self-contained READMEs
 
 "on":
   push:
-    branches-ignore:
-      - renovate/**
 
 permissions:
   contents: read
@@ -87,12 +85,16 @@ jobs:
           pre-commit run --files README.md SECURITY.md || true
           pre-commit run --files README.md SECURITY.md || true
 
+      - id: is_renovate
+        run: echo "is_renovate=$( [[ ${GITHUB_REF#refs/heads/} != renovate/* ]] && echo false || echo true )" >> $GITHUB_OUTPUT
+
       - name: Commit generated files.
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4
         with:
           commit_message: "${{ env.FIRST_LINE_OF_HEAD_COMMIT_MESSAGE }}\n${{ github.sha }}"
           file_pattern: README.adoc README.md SECURITY.md
           disable_globbing: true
+        if: steps.is_renovate.outputs.is_renovate == 'false'
 
       ### (Deploy README.adoc)
       - name: Generate HTML
@@ -100,7 +102,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
 
       - name: upload docs directory for job transfer
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: ./docs
@@ -114,6 +116,8 @@ jobs:
       contents: read
       pages: write
       id-token: write
+      # delete-artifact@v4
+      actions: write
     environment:
       name: github-pages
       url: "${{ steps.deployment.outputs.page_url }}"
@@ -138,7 +142,7 @@ jobs:
         uses: actions/deploy-pages@de14547edc9944350dc0481aa5b7afb08e75f254 # v2
 
       - name: docs artifact no longer needed
-        uses: geekyeggo/delete-artifact@54ab544f12cdb7b71613a16a2b5a37a9ade990af # v2
+        uses: geekyeggo/delete-artifact@v4
         with:
           name: docs
           failOnError: false
