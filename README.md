@@ -29,7 +29,7 @@ In most cases, you will want to use this role in combination with my [`bootstrap
 
 DISCLAIMER
 
-This role is a fork of [robertdebock/ansible-role-core_dependencies v2.1.9 on GitHub (11 Feb, 2022)](https://github.com/robertdebock/ansible-role-core_dependencies/releases/tag/2.1.9) ([compare changes since here](https://github.com/robertdebock/ansible-role-core_dependencies/compare/2.1.9…​master)) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)), for now just with added code comments.
+This role is a fork of [robertdebock/ansible-role-core\_dependencies v2.1.9 on GitHub (11 Feb, 2022)](https://github.com/robertdebock/ansible-role-core_dependencies/releases/tag/2.1.9) ([compare changes since here](https://github.com/robertdebock/ansible-role-core_dependencies/compare/2.1.9…​master)) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)), for now just with added code comments.
 
 # 🔎 Metadata
 
