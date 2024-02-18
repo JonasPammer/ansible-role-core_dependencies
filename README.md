@@ -28,6 +28,10 @@ This role also ensures an up-to-date package cache for most systems.
 
 In most cases, you will want to use this role in combination with my [`bootstrap`-role](https://github.com/JonasPammer/ansible-role-bootstrap).
 
+DISCLAIMER
+
+This role is a fork of [robertdebock/ansible-role-core_dependencies v2.1.9 on GitHub (11 Feb, 2022)](https://github.com/robertdebock/ansible-role-core_dependencies/releases/tag/2.1.9) ([compare changes since here](https://github.com/robertdebock/ansible-role-core_dependencies/compare/2.1.9…​master)) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)), for now just with added code comments.
+
 # 🔎 Metadata
 
 Below you can find information on…
